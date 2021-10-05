@@ -1,0 +1,15 @@
+---
+- name: "Play 1- cgi website configuration"
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: "install vim,telnet,wget"
+      yum:
+        name: "telnet,vim,wget"
+        state: present
+      vars:
+        packages:
+          - telnet
+          - vim
+          - wget
+          
